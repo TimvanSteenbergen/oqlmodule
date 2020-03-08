@@ -47,12 +47,39 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void iVK_Order_CreateByPersonArticlePriceDate(IContext context, oqlexample.proxies.ExamplePerson _examplePerson)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("ExamplePerson", _examplePerson == null ? null : _examplePerson.getMendixObject());
+			Core.execute(context, "OQLExample.IVK_Order_CreateByPersonArticlePriceDate", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static void iVK_PerformTests(IContext context)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
 			Core.execute(context, "OQLExample.IVK_PerformTests", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void iVK_Wedding(IContext context, oqlexample.proxies.ExamplePerson _examplePerson1, oqlexample.proxies.ExamplePerson _examplePerson2)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("ExamplePerson1", _examplePerson1 == null ? null : _examplePerson1.getMendixObject());
+			params.put("ExamplePerson2", _examplePerson2 == null ? null : _examplePerson2.getMendixObject());
+			Core.execute(context, "OQLExample.IVK_Wedding", params);
 		}
 		catch (CoreException e)
 		{

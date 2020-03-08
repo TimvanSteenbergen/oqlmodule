@@ -28,7 +28,8 @@ public class ExamplePersonResult
 		Active("Active"),
 		HeightInDecimal("HeightInDecimal"),
 		Gender("Gender"),
-		ExamplePersonResult_ExamplePerson("OQLExample.ExamplePersonResult_ExamplePerson");
+		ExamplePersonResult_ExamplePerson("OQLExample.ExamplePersonResult_ExamplePerson"),
+		MarriedTo("OQLExample.MarriedTo");
 
 		private java.lang.String metaName;
 
@@ -452,6 +453,49 @@ public class ExamplePersonResult
 			getMendixObject().setValue(context, MemberNames.ExamplePersonResult_ExamplePerson.toString(), null);
 		else
 			getMendixObject().setValue(context, MemberNames.ExamplePersonResult_ExamplePerson.toString(), examplepersonresult_exampleperson.getMendixObject().getId());
+	}
+
+	/**
+	 * @return value of MarriedTo
+	 */
+	public final oqlexample.proxies.ExamplePerson getMarriedTo() throws com.mendix.core.CoreException
+	{
+		return getMarriedTo(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of MarriedTo
+	 */
+	public final oqlexample.proxies.ExamplePerson getMarriedTo(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		oqlexample.proxies.ExamplePerson result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.MarriedTo.toString());
+		if (identifier != null)
+			result = oqlexample.proxies.ExamplePerson.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of MarriedTo
+	 * @param marriedto
+	 */
+	public final void setMarriedTo(oqlexample.proxies.ExamplePerson marriedto)
+	{
+		setMarriedTo(getContext(), marriedto);
+	}
+
+	/**
+	 * Set value of MarriedTo
+	 * @param context
+	 * @param marriedto
+	 */
+	public final void setMarriedTo(com.mendix.systemwideinterfaces.core.IContext context, oqlexample.proxies.ExamplePerson marriedto)
+	{
+		if (marriedto == null)
+			getMendixObject().setValue(context, MemberNames.MarriedTo.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.MarriedTo.toString(), marriedto.getMendixObject().getId());
 	}
 
 	/**

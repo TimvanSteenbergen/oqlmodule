@@ -27,7 +27,8 @@ public class ExamplePerson
 		LongAge("LongAge"),
 		Active("Active"),
 		HeightInDecimal("HeightInDecimal"),
-		Gender("Gender");
+		Gender("Gender"),
+		MarriedTo("MarriedTo");
 
 		private java.lang.String metaName;
 
@@ -416,6 +417,42 @@ public class ExamplePerson
 			getMendixObject().setValue(context, MemberNames.Gender.toString(), gender.toString());
 		else
 			getMendixObject().setValue(context, MemberNames.Gender.toString(), null);
+	}
+
+	/**
+	 * @return value of MarriedTo
+	 */
+	public final java.lang.Long getMarriedTo()
+	{
+		return getMarriedTo(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of MarriedTo
+	 */
+	public final java.lang.Long getMarriedTo(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.MarriedTo.toString());
+	}
+
+	/**
+	 * Set value of MarriedTo
+	 * @param marriedto
+	 */
+	public final void setMarriedTo(java.lang.Long marriedto)
+	{
+		setMarriedTo(getContext(), marriedto);
+	}
+
+	/**
+	 * Set value of MarriedTo
+	 * @param context
+	 * @param marriedto
+	 */
+	public final void setMarriedTo(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long marriedto)
+	{
+		getMendixObject().setValue(context, MemberNames.MarriedTo.toString(), marriedto);
 	}
 
 	/**
