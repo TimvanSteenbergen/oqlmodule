@@ -98,7 +98,13 @@ public class ExportOQLToCSV extends CustomJavaAction<IMendixObject>
 			
 			
 			IContext context = getContext().createSudoClone();
-			IDataTable results = Core.retrieveOQLDataTable(context, buildRequest(offset, PAGE_SIZE));
+			IOQLTextGetRequest OQLTextGetRequest = buildRequest(offset, PAGE_SIZE);	
+			IDataTable results = Core.retrieveOQLDataTable(context, OQLTextGetRequest); //Fails with entities named 'Order', 'Group', 'While', and 'Limit'
+
+//			String OQLQuery = OQLTextGetRequest.getQuery();
+//			IDataTable results = Core.retrieveOQLDataTable(context, OQLQuery); //Different signature. Also fails with entities named 'Order', 'Group', 'While', and 'Limit' 
+//			IDataTable results = Core.retrieveOQLDataTable(context, "SELECT * FROM OQLExample.Order;", PAGE_SIZE, offset); //Fails
+//			IDataTable results = Core.retrieveOQLDataTable(context, OQLQuery, PAGE_SIZE, offset); //Fails with entities named 'Order', 'Group', 'While', and 'Limit' 
 
 			IDataTableSchema tableSchema = results.getSchema();
 			
@@ -160,7 +166,7 @@ public class ExportOQLToCSV extends CustomJavaAction<IMendixObject>
 	}
 
 	// BEGIN EXTRA CODE
-	private IOQLTextGetRequest buildRequest(int offset, int pagesize) {
+	public IOQLTextGetRequest buildRequest(int offset, int pagesize) {
 		IOQLTextGetRequest request = Core.createOQLTextGetRequest();
 		request.setQuery(statement);
 		IParameterMap parameterMap = request.createParameterMap();
